@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+/* Terminal Scrollbar */
+
+.terminal-scroll::-webkit-scrollbar{
+  width:6px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb{
+  background:#3f3f46;
+  border-radius:999px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb:hover{
+  background:#06b6d4;
+}
+
+
+
+
+
+/* ---------- STATUS LED ---------- */
+
+.status-led{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  animation:statusBlink 2.8s infinite ease-in-out;
+  will-change:transform,background-color,box-shadow,opacity;
+}
+
+@keyframes statusBlink{
+
+  /* Green */
+
+  0%{
+    background:#22c55e;
+    box-shadow:
+      0 0 5px rgba(34,197,94,.4),
+      0 0 12px rgba(34,197,94,.35),
+      0 0 24px rgba(34,197,94,.25);
+    transform:scale(.9);
+    opacity:.8;
+  }
+
+  18%{
+    background:#22c55e;
+    box-shadow:
+      0 0 10px rgba(34,197,94,.7),
+      0 0 22px rgba(34,197,94,.55),
+      0 0 40px rgba(34,197,94,.35);
+    transform:scale(1.15);
+    opacity:1;
+  }
+
+  /* Smooth fade */
+
+  32%{
+    background:#84cc16;
+    box-shadow:
+      0 0 6px rgba(132,204,22,.35);
+    transform:scale(1);
+    opacity:.75;
+  }
+
+  /* Red */
+
+  50%{
+    background:#ef4444;
+    box-shadow:
+      0 0 10px rgba(239,68,68,.7),
+      0 0 22px rgba(239,68,68,.5),
+      0 0 40px rgba(239,68,68,.35);
+    transform:scale(1.15);
+    opacity:1;
+  }
+
+  /* Fade back */
+
+  68%{
+    background:#fb7185;
+    box-shadow:
+      0 0 6px rgba(251,113,133,.3);
+    transform:scale(1);
+    opacity:.75;
+  }
+
+  /* Green again */
+
+  100%{
+    background:#22c55e;
+    box-shadow:
+      0 0 10px rgba(34,197,94,.7),
+      0 0 22px rgba(34,197,94,.55),
+      0 0 40px rgba(34,197,94,.35);
+    transform:scale(1.15);
+    opacity:1;
+  }
+
+}

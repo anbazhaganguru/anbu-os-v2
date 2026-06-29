@@ -4,6 +4,7 @@ function GlassCard({
   children,
   className = "",
   hover = true,
+  ...props
 }) {
   return (
     <motion.div
@@ -31,10 +32,11 @@ function GlassCard({
         duration-300
         ${className}
       `}
+      {...props}
     >
       {/* Glow */}
 
-      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 hover:opacity-100">
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
 
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 via-transparent to-violet-500/5"></div>
 
